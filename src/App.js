@@ -1,25 +1,60 @@
-import logo from './logo.svg';
 import './App.css';
+import { Container, Row, Col } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { addInput, addBucket, delBucket, doneBucket, cancelBucket } from './store';
+import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
+import Detail from './Component/Detail/Detail';
+import Input from './Component/Main/Input';
+import Working from './Component/Main/Working';
+import Done from './Component/Main/Done';
+
 
 function App() {
+
+
+  let [id, setId] = useState(1)
+  let [title, setTitle] = useState('')
+  let [content, setContent] = useState('')
+
+
+  useEffect(()=>{
+    
+    
+  },[])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      
+
+      <Routes>
+
+        <Route path='/' element={<>
+          
+
+            <Input id={id} setId={setId} title={title} setTitle={setTitle} content={content} setContent={setContent}/>
+            
+
+            <Working/>
+            
+
+            <Done/>
+
+            
+           </>}>
+        </Route>
+          
+            <Route path='/detail/:id' element={<Detail/>}></Route>
+      
+      </Routes>
+
+
     </div>
   );
 }
+
+
+
 
 export default App;
