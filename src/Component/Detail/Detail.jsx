@@ -1,9 +1,10 @@
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
 
 
 
-function Detail() {
+function Detail({setTitle, setContent}) {
 
     const params = useParams().id
     // console.log(params)
@@ -17,7 +18,11 @@ function Detail() {
     console.log(params)   // params는 미친놈이다 숫자인척하는 문자이므로 조심 또 조심하자.
     console.log(a)
     
-
+  
+    useEffect(()=>{
+      setTitle('')
+      setContent('')
+    }, [])
     
     return (
         <div className='detail'>

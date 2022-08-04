@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { addBucket } from '../../store';
+import { addBucket, addInput } from '../../store';
 
 
 function Input ({id, setId, title, setTitle, content, setContent}) {

@@ -45,7 +45,7 @@ function App() {
            </>}>
         </Route>
           
-            <Route path='/detail/:id' element={<Detail/>}></Route>
+            <Route path='/detail/:id' element={<Detail setTitle={setTitle} setContent={setContent}/>}></Route>
       
       </Routes>
 
@@ -58,3 +58,4 @@ function App() {
 
 
 export default App;
+
